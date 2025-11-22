@@ -7,8 +7,9 @@ function App() {
     <>
       <AnimatedReactLogo />
 
-      <AnimatedText children={"Hello, world!"} />
-      <AnimatedBoxRotate children={"Hello, world!"} />
+      <AnimatedTextTranslateY children={"Hello, world!"} />
+      <AnimatedTextRotate children={"Hello, world!"} />
+      <AnimatedTextOpacity children={"Hello, world!"} />
     </>
   );
 }
@@ -25,7 +26,7 @@ function AnimatedReactLogo() {
   );
 }
 
-function AnimatedText({ children }) {
+function AnimatedTextTranslateY({ children }) {
   return (
     <div className="bg-transparent shadow-lg p-8 m-4 border border-[#bbcbcb] border-solid rounded-full">
       <motion.a
@@ -47,7 +48,7 @@ function AnimatedText({ children }) {
   );
 }
 
-function AnimatedBoxRotate({ children }) {
+function AnimatedTextRotate({ children }) {
   return (
     <motion.div
       className="bg-transparent shadow-lg p-8 m-4 border border-[#bbcbcb] border-solid rounded-full"
@@ -68,6 +69,32 @@ function AnimatedBoxRotate({ children }) {
   );
 }
 
-export { AnimatedReactLogo, AnimatedText, AnimatedBoxRotate };
+function AnimatedTextOpacity({ children }) {
+  return (
+    <motion.div
+      className="bg-transparent shadow-lg p-8 m-4 border border-[#bbcbcb] border-solid rounded-full"
+      initial="initial"
+      whileHover="hovered"
+    >
+      <motion.h1
+        variants={{
+          initial: { opacity: 0 },
+          hovered: { opacity: 1 },
+        }}
+        transition={{ ease: "easeOut", duration: 2 }}
+        className="font-mono text-6xl"
+      >
+        {children}
+      </motion.h1>
+    </motion.div>
+  );
+}
+
+export {
+  AnimatedReactLogo,
+  AnimatedTextTranslateY,
+  AnimatedTextRotate,
+  AnimatedTextOpacity,
+};
 
 export default App;
