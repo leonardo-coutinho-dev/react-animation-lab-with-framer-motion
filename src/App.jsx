@@ -1,4 +1,4 @@
-import logo from "./assets/react.svg";
+import logo from "./assets/react-svg-logo.svg";
 
 import { motion } from "framer-motion";
 
@@ -27,7 +27,7 @@ function AnimatedReactLogo() {
 
 function AnimatedText({ children }) {
   return (
-    <div className="bg-indigo-50 p-8 m-4 border-3 border-sky-300 border-dashed rounded-full">
+    <div className="bg-transparent shadow-lg p-8 m-4 border border-[#bbcbcb] border-solid rounded-full">
       <motion.a
         className="overflow-hidden relative block"
         initial="initial"
@@ -50,7 +50,7 @@ function AnimatedText({ children }) {
 function AnimatedBoxRotate({ children }) {
   return (
     <motion.div
-      className="bg-indigo-50 p-8 m-4 border-3 border-sky-300 border-dashed rounded-full"
+      className="bg-transparent shadow-lg p-8 m-4 border border-[#bbcbcb] border-solid rounded-full"
       initial="initial"
       whileHover="hovered"
     >
